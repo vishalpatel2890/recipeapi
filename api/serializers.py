@@ -15,7 +15,7 @@ class IngredientsSerializer(serializers.HyperlinkedModelSerializer):
 
 class StepsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Ingredients
+        model = Steps
         fields = ('stepno', 'steps', 'recipe')
 
 
