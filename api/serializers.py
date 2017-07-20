@@ -1,4 +1,4 @@
-from api.models import Recipes, Ingredients
+from api.models import Recipes, Ingredients, Steps
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
@@ -12,6 +12,12 @@ class IngredientsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Ingredients
         fields = ('ingredient', 'quantity', 'measuresize', 'recipe')
+
+class StepsSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Ingredients
+        fields = ('stepno', 'steps', 'recipe')
+
 
 class UserSerializer(serializers.Serializer):
     email = serializers.EmailField()

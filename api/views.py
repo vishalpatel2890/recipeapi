@@ -1,6 +1,6 @@
-from api.models import Recipes, Ingredients
+from api.models import Recipes, Ingredients, Steps
 from rest_framework import viewsets
-from api.serializers import RecipesSerializer, IngredientsSerializer, UserSerializer
+from api.serializers import RecipesSerializer, IngredientsSerializer, UserSerializer, StepsSerializer
 from django.contrib.auth.models import User
 
 
@@ -17,6 +17,13 @@ class IngredientsViewSet(viewsets.ModelViewSet):
     """
     queryset = Ingredients.objects.all().order_by('recipe')
     serializer_class = IngredientsSerializer
+
+class IngredientsViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows Ingredients to be viewed or edited.
+    """
+    queryset = Steps.objects.all().order_by('recipe')
+    serializer_class = StepsSerializer
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.all()
