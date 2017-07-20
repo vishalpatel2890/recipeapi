@@ -1,8 +1,16 @@
 from api.models import Recipes, Ingredients, Steps
-from rest_framework import viewsets
+from rest_framework import viewsets, filters, generics
 from api.serializers import RecipesSerializer, IngredientsSerializer, UserSerializer, StepsSerializer
 from django.contrib.auth.models import User
 
+class RecipeNamesList(generics.ListAPIView):
+    serializer_class = RecipesSerializer
+
+    def get_queryset(self):
+        queryset = Recipes.objects.all()
+        workspace = self.request.query_params.get('recipename')
+        queryset = queryset.filter(recipename=workspace)
+        return queryset
 
 class RecipesViewSet(viewsets.ModelViewSet):
     """
@@ -24,6 +32,7 @@ class StepsViewSet(viewsets.ModelViewSet):
     """
     queryset = Steps.objects.all().order_by('recipe')
     serializer_class = StepsSerializer
+
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.all()
