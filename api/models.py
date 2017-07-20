@@ -1,21 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# class Recipes(models.Model):
-#     id = models.AutoField(primary_key=True)
-#     recipename = models.CharField(max_length=50)
-#     yields = models.IntegerField()
-#     portionsize = models.CharField(max_length=50)
-#     username = models.ForeignKey(User)
-#     dateadded = models.DateField(auto_now_add=True)
-#
-#
-#
-#     def __unicode__(self):
-#         return self.id
-#         return self.recipename
-#         return self.yields
-#         return self.portionsizes
 
 class Recipes(models.Model):
     id = models.AutoField(primary_key=True)
@@ -24,6 +9,7 @@ class Recipes(models.Model):
     portionsize = models.CharField(max_length=50)
     username = models.ForeignKey(User)
     dateadded = models.DateField(auto_now_add=True)
+    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
 
 
 
@@ -32,6 +18,7 @@ class Recipes(models.Model):
         return self.recipename
         return self.yields
         return self.portionsizes
+        return self.image
 
 class Ingredients(models.Model):
     ingredient = models.CharField(max_length=50)
@@ -63,3 +50,18 @@ class Ingredients(models.Model):
         return self.quantity
         return self.measuresize
         return self.recipe
+
+class Steps(models.Model):
+    stepno = models.IntegerField()
+    recipe = models.ForeignKey(Recipes, on_delete=models.CASCADE)
+    steps = models.TextField()
+    step_image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
+
+
+
+    def __str__(self):
+        
+        return self.stepno
+        return self.steps
+        return self.recipe
+        return self.step_image
