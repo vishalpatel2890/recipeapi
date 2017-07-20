@@ -1,9 +1,13 @@
+Babel==2.3.4
 dj-database-url==0.4.1
 Django==1.11.1
-gunicorn==19.6.0
-psycopg2==2.6.2
-whitenoise==3.2
+django-cors-headers==2.1.0
 django-webpack-loader==0.2.4
 djangorestframework==3.6.3
-Babel==2.3.4
+gunicorn==19.6.0
+olefile==0.44
+Pillow==4.2.1
+psycopg2==2.6.2
+pytz==2017.2
 virtualenv==15.1.0
+whitenoise==3.2
