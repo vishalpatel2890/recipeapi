@@ -11,12 +11,12 @@ class RecipesSerializer(serializers.HyperlinkedModelSerializer):
 class IngredientsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Ingredients
-        fields = ('ingredient', 'quantity', 'measuresize', 'recipe')
+        fields = ('ingredient', 'quantity', 'measuresize', 'recipe', 'recipe_id')
 
 class StepsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Steps
-        fields = ('stepno', 'steps', 'recipe')
+        fields = ('stepno', 'steps', 'recipe', 'recipe_id')
 
 
 class UserSerializer(serializers.Serializer):
