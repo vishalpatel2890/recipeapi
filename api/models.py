@@ -9,7 +9,7 @@ class Recipes(models.Model):
     portionsize = models.CharField(max_length=50)
     username = models.ForeignKey(User)
     dateadded = models.DateField(auto_now_add=True)
-    # image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
+    image = models.ImageField(upload_to='recipes', default='static/about-black-1240x600.jpg', height_field=None, width_field=None, max_length=100)
 
 
 
@@ -55,13 +55,11 @@ class Steps(models.Model):
     stepno = models.IntegerField()
     recipe = models.ForeignKey(Recipes, on_delete=models.CASCADE)
     steps = models.TextField()
-    # step_image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
-
-
+    step_image = models.ImageField(upload_to="", default='static/about-black-1240x600.jpg', height_field=None, width_field=None, max_length=100)
 
     def __str__(self):
 
         return self.stepno
         return self.steps
         return self.recipe
-        # return self.step_image
+        return self.step_image

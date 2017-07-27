@@ -6,7 +6,8 @@ from django.contrib.auth.models import User
 class RecipesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Recipes
-        fields = ('id', 'recipename', 'yields', 'portionsize', 'username', 'dateadded')
+        fields = ('id', 'recipename', 'yields', 'portionsize', 'username', 'dateadded', 'image', )
+        # read_only_fields = ('image',)
 
 class IngredientsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -16,7 +17,7 @@ class IngredientsSerializer(serializers.HyperlinkedModelSerializer):
 class StepsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Steps
-        fields = ('stepno', 'steps', 'recipe', 'recipe_id')
+        fields = ('stepno', 'steps', 'recipe', 'recipe_id', 'step_image')
 
 
 class UserSerializer(serializers.Serializer):
