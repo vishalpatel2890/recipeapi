@@ -21,8 +21,8 @@ class Recipes(models.Model):
         return self.image
 
 class Ingredients(models.Model):
-    ingredient = models.CharField(max_length=50)
-    quantity = models.FloatField()
+    ingredient = models.CharField(max_length=50, default='flour')
+    quantity = models.FloatField(default='100')
     MEASURE_SIZES = (
         ('PNCH', 'PINCH'),
         ('TSP', 'TSP'),
@@ -43,7 +43,7 @@ class Ingredients(models.Model):
         default = 'TBSP'
         )
 
-    recipe = models.ForeignKey(Recipes, on_delete=models.CASCADE)
+    recipe = models.ForeignKey(Recipes, on_delete=models.CASCADE, default='1')
 
     def __str__(self):
         return self.ingredient

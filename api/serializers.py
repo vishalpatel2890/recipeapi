@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class RecipesSerializer(serializers.HyperlinkedModelSerializer):
-    ingredient = serializers.HyperlinkedRelatedField(many=False, view_name='recipe', queryset=User.objects.all())
+    # ingredient = serializers.HyperlinkedRelatedField(many=False, view_name='recipe', queryset=User.objects.all())
 
 
     class Meta:
@@ -13,7 +13,7 @@ class RecipesSerializer(serializers.HyperlinkedModelSerializer):
         # read_only_fields = ('image',)
 
 class IngredientsSerializer(serializers.HyperlinkedModelSerializer):
-    recipe = serializers.HyperlinkedRelatedField(many=False, view_name='recipe-detail', queryset=User.objects.all())
+    # recipe = serializers.HyperlinkedRelatedField(many=False, view_name='recipe-detail', queryset=User.objects.all())
 
     class Meta:
         model = Ingredients
