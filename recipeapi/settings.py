@@ -20,11 +20,14 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "xzewvz2k%d^v3@mc9m%59a&f8#)4!acsj5d)*0zkxtt9287xwn"
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = "xzewvz2k%d^v3@mc9m%59a&f8#)4!acsj5d)*0zkxtt9287xwn"
+#
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = True
 
 # Application definition
 
@@ -121,6 +124,12 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication'
+    ]
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
