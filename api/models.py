@@ -52,13 +52,14 @@ class Ingredients(models.Model):
         return self.recipe
 
 class Steps(models.Model):
+    id = models.AutoField(primary_key=True)
     stepno = models.IntegerField()
     recipe = models.ForeignKey(Recipes, on_delete=models.CASCADE)
     steps = models.TextField()
     step_image = models.ImageField(upload_to="", default='static/about-black-1240x600.jpg', height_field=None, width_field=None, max_length=100)
 
     def __str__(self):
-
+        return self.id
         return self.stepno
         return self.steps
         return self.recipe
