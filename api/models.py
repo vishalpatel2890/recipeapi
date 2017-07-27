@@ -58,6 +58,9 @@ class Steps(models.Model):
     steps = models.TextField()
     step_image = models.ImageField(upload_to="", default='static/about-black-1240x600.jpg', height_field=None, width_field=None, max_length=100)
 
+    class Meta:
+        unique_together = ('recipe', 'stepno',)
+
     def __str__(self):
         return self.id
         return self.stepno
