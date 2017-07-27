@@ -128,13 +128,13 @@ ALLOWED_HOSTS = ['*']
 # STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
-# STATICFILES_DIRS = [
-#     os.path.join(PROJECT_ROOT, 'static'),
-# ]
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_ROOT, 'static'),
+]
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
