@@ -10,6 +10,8 @@ class RecipesSerializer(serializers.HyperlinkedModelSerializer):
         # read_only_fields = ('image',)
 
 class IngredientsSerializer(serializers.HyperlinkedModelSerializer):
+    recipe = serializers.HyperlinkedRelatedField(many=False, view_name='recipe')
+    
     class Meta:
         model = Ingredients
         fields = ('ingredient', 'quantity', 'measuresize', 'recipe', 'recipe_id')
