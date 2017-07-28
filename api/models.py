@@ -4,10 +4,10 @@ from django.contrib.auth.models import User
 
 class Recipes(models.Model):
     id = models.AutoField(primary_key=True)
-    recipename = models.CharField(max_length=50)
-    yields = models.IntegerField()
-    portionsize = models.CharField(max_length=50)
-    username = models.ForeignKey(User)
+    recipename = models.CharField(max_length=50, default='Enter A Recipe Name')
+    yields = models.IntegerField(default='0')
+    portionsize = models.CharField(max_length=50, default='Enter Portion Size')
+    username = models.ForeignKey(User, default='https://quiet-citadel-22666.herokuapp.com/user/1/')
     dateadded = models.DateField(auto_now_add=True)
     image = models.ImageField(upload_to='recipes', default='static/about-black-1240x600.jpg', height_field=None, width_field=None, max_length=100)
 
