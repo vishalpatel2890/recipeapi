@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Recipes(models.Model):
     id = models.AutoField(primary_key=True)
     recipename = models.CharField(max_length=50, default='Enter A Recipe Name')
-    yields = models.IntegerField(default='0')
+    yields = models.IntegerField(default='1')
     portionsize = models.CharField(max_length=50, default='Enter Portion Size')
     username = models.ForeignKey(User, default='https://quiet-citadel-22666.herokuapp.com/user/1/')
     dateadded = models.DateField(auto_now_add=True)
