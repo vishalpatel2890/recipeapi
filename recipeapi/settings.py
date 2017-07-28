@@ -20,14 +20,9 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'xzewvz2k%d^v3@mc9m%59a&f8#)4!acsj5d)*0zkxtt9287xwn')
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = "xzewvz2k%d^v3@mc9m%59a&f8#)4!acsj5d)*0zkxtt9287xwn"
-#
-# # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
 
 # Application definition
 
@@ -151,9 +146,9 @@ AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
     'Cache-Control': 'max-age=94608000',
 }
 
-AWS_STORAGE_BUCKET_NAME = 'recipeapp-media'
-AWS_ACCESS_KEY_ID = 'AKIAI6HJSUFHSIVCGYFA'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'AWS_STORAGE_BUCKET_NAME'
+AWS_ACCESS_KEY_ID = 'AWS_ACCESS_KEY_ID'
+AWS_SECRET_ACCESS_KEY = 'AWS_SECRET_ACCESS_KEY'
 
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
