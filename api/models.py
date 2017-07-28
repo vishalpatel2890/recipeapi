@@ -7,7 +7,7 @@ class Recipes(models.Model):
     recipename = models.CharField(max_length=50, default='Enter A Recipe Name')
     yields = models.IntegerField(default='1')
     portionsize = models.CharField(max_length=50, default='Enter Portion Size')
-    username = models.ForeignKey(User)
+    username = models.ForeignKey(User, blank=True, null=True)
     dateadded = models.DateField(auto_now_add=True)
     image = models.ImageField(upload_to='recipes', default='static/about-black-1240x600.jpg', height_field=None, width_field=None, max_length=100)
 
