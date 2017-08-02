@@ -10,7 +10,7 @@ class RecipesViewSet(viewsets.ModelViewSet):
     """
     queryset = Recipes.objects.all().order_by('username')
     serializer_class = RecipesSerializer
-    parser_classes = (MultiPartParser, FormParser)
+    # parser_classes = (MultiPartParser, FormParser)
 
 class IngredientsViewSet(viewsets.ModelViewSet):
     """
