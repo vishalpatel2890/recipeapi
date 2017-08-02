@@ -2,6 +2,7 @@ from api.models import Recipes, Ingredients, Steps
 from rest_framework import viewsets, filters, generics
 from api.serializers import RecipesSerializer, IngredientsSerializer, UserSerializer, StepsSerializer
 from django.contrib.auth.models import User
+from rest_framework.parsers import MultiPartParser, FormParser
 
 class RecipesViewSet(viewsets.ModelViewSet):
     """
@@ -9,6 +10,7 @@ class RecipesViewSet(viewsets.ModelViewSet):
     """
     queryset = Recipes.objects.all().order_by('username')
     serializer_class = RecipesSerializer
+    parser_classes = (MultiPartParser, FormParser)
 
 class IngredientsViewSet(viewsets.ModelViewSet):
     """
