@@ -12,12 +12,18 @@ class RecipesViewSet(viewsets.ModelViewSet):
     serializer_class = RecipesSerializer
     parser_classes = (MultiPartParser, FormParser)
 
-class IngredientsViewSet(mixins.UpdateModelMixin, viewsets.ModelViewSet):
+class IngredientsViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows Ingredients to be viewed or edited.
     """
     queryset = Ingredients.objects.all()
     serializer_class = IngredientsSerializer
+
+    ingredients = IngredientsViewSet.as_view({
+    'get': 'list',
+    'post': 'create'
+    'put' : 'update'
+})
 
 
 class StepsViewSet(viewsets.ModelViewSet):
