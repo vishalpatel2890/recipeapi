@@ -1,9 +1,8 @@
 from api.models import Recipes, Ingredients, Steps
-from rest_framework import viewsets, filters, generics
+from rest_framework import viewsets, filters, generics, mixins
 from api.serializers import RecipesSerializer, IngredientsSerializer, UserSerializer, StepsSerializer
 from django.contrib.auth.models import User
 from rest_framework.parsers import MultiPartParser, FormParser
-from rest_framework.mixins import mixins
 
 class RecipesViewSet(viewsets.ModelViewSet):
     """
