@@ -16,9 +16,11 @@ class IngredientsViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows Ingredients to be viewed or edited.
     """
+    serializer_class = IngredientsSerializer
     def put(self, request):
         queryset = Ingredients.objects.all().order_by('recipe')
-        serializer_class = IngredientsSerializer
+        return queryset
+
 
 class StepsViewSet(viewsets.ModelViewSet):
     """
