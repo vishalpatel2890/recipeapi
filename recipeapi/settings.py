@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'storages',
     'corsheaders',
-    'django-filter'
 ]
 
 MIDDLEWARE = [
@@ -129,8 +128,7 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
-    ),
-    'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
+    )
 }
 
 # Static files (CSS, JavaScript, Images)
