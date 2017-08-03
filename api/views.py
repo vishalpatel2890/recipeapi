@@ -21,7 +21,7 @@ class IngredientsViewSet(viewsets.ModelViewSet):
 
     ingredients = IngredientsViewSet.as_view({
     'get': 'list',
-    'post': 'create'
+    'post': 'create',
     'put' : 'update'
 })
 
