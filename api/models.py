@@ -21,6 +21,7 @@ class Recipes(models.Model):
         return self.image
 
 class Ingredients(models.Model):
+    id = models.AutoField(primary_key=True)
     ingredient = models.CharField(max_length=50, default='flour')
     quantity = models.FloatField(default='100')
     MEASURE_SIZES = (
@@ -46,6 +47,7 @@ class Ingredients(models.Model):
     recipe = models.ForeignKey(Recipes, on_delete=models.CASCADE, default='1')
 
     def __str__(self):
+        return self.id
         return self.ingredient
         return self.quantity
         return self.measuresize
