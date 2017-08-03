@@ -12,22 +12,13 @@ class RecipesViewSet(viewsets.ModelViewSet):
     serializer_class = RecipesSerializer
     parser_classes = (MultiPartParser, FormParser)
 
-class IngredientsViewSet(viewsets.ModelViewSet):
+class IngredientsViewSet(mixins.UpdateModelMixin, GenericViewSet):
     """
     API endpoint that allows Ingredients to be viewed or edited.
     """
     queryset = Ingredients.objects.all().order_by('recipe')
     serializer_class = IngredientsSerializer
 
-    def get_object(self):
-        if self.request.method == 'PUT':
-            resource = Resource.objects.filter(id=self.kwargs.get('pk')).first()
-            if resource:
-                return resource
-            else:
-                return Resource(id=self.kwargs.get('pk'))
-        else:
-            return super(ResourceViewSet, self).get_object()
 
 class StepsViewSet(viewsets.ModelViewSet):
     """
