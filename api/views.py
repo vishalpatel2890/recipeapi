@@ -12,7 +12,7 @@ class RecipesViewSet(viewsets.ModelViewSet):
     serializer_class = RecipesSerializer
     parser_classes = (MultiPartParser, FormParser)
 
-class IngredientsViewSet(mixins.UpdateModelMixin, viewsets.ModelViewSet):
+class IngredientsViewSet(viewsets.GenericAPIView):
     """
     API endpoint that allows Ingredients to be viewed or edited.
     """
