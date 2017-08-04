@@ -19,11 +19,11 @@ class IngredientsViewSet(viewsets.ModelViewSet):
     queryset = Ingredients.objects.all()
     serializer_class = IngredientsSerializer
 
-ingredients = IngredientsViewSet.as_view({
-    'get': 'list',
-    'post': 'create',
-    'put' : 'update'
-})
+# ingredients = IngredientsViewSet.as_view({
+#     'get': 'list',
+#     'post': 'create',
+#     'put' : 'update'
+# })
 
 
 class StepsViewSet(viewsets.ModelViewSet):

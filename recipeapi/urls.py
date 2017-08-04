@@ -5,7 +5,7 @@ from api.views import RecipeNamesList, IngredientsList, StepsList, IngredientsVi
 
 router = routers.DefaultRouter()
 router.register(r'recipes', views.RecipesViewSet)
-# router.register(r'ingredients', views.IngredientsViewSet)
+router.register(r'ingredients', views.IngredientsViewSet)
 router.register(r'steps', views.StepsViewSet)
 router.register(r'user', views.UserViewSet)
 
@@ -17,6 +17,6 @@ urlpatterns = [
     url(r'^recipesearch/(?P<recipename>.+)/$', RecipeNamesList.as_view()),
     url(r'^ingredientsearch/(?P<recipeid>.+)/$', IngredientsList.as_view()),
     url(r'^stepsearch/(?P<recipeid>.+)/$', StepsList.as_view()),
-    url(r'^ingredients/$', ingredients, name='ingredients'),
+    # url(r'^ingredients/$', ingredients, name='ingredients'),
 
 ]
