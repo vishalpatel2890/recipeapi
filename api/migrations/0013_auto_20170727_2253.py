@@ -15,6 +15,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='recipes',
             name='yields',
-            field=models.IntegerField(default='1'),
+            # field=models.IntegerField(default='1'),
         ),
     ]
