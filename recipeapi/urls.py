@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from rest_framework import routers
 from api import views
-from api.views import RecipeNamesList, IngredientsList, StepsList, IngredientsViewSet, ingredients
+from api.views import RecipeNamesList, IngredientsList, StepsList, IngredientsViewSet
 
 router = routers.DefaultRouter()
 router.register(r'recipes', views.RecipesViewSet)
