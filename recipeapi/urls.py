@@ -17,6 +17,5 @@ urlpatterns = [
     url(r'^recipesearch/(?P<recipename>.+)/$', RecipeNamesList.as_view()),
     url(r'^ingredientsearch/(?P<recipeid>.+)/$', IngredientsList.as_view()),
     url(r'^stepsearch/(?P<recipeid>.+)/$', StepsList.as_view()),
-    # url(r'^ingredients/$', ingredients, name='ingredients'),
 
 ]
