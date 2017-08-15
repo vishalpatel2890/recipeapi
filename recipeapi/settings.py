@@ -155,6 +155,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = (
     'access-control-allow-origin',
+    'access-control-allow-headers',
+    'access-control-allow-methods',
     'content-type',
     'x-csrftoken',
     'x-requested-with',
