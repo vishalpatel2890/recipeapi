@@ -11,8 +11,6 @@ class Recipes(models.Model):
     dateadded = models.DateField(auto_now_add=True)
     image = models.ImageField(upload_to='recipes', default='static/about-black-1240x600.jpg', height_field=None, width_field=None, max_length=100)
 
-
-
     def __str__(self):
         # return self.id
         return self.recipename
