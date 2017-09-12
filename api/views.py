@@ -57,5 +57,5 @@ class StepsList(generics.ListAPIView):
     def get_queryset(self):
         queryset = Steps.objects.all()
         recipeid = self.request.query_params.get('recipeid')
-        queryset = queryset.filter(recipe_id=recipeid)
+        queryset = queryset.filter(recipe_id=recipeid).order_by('stepno')
         return queryset
