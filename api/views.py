@@ -24,7 +24,7 @@ class StepsViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows Ingredients to be viewed or edited.
     """
-    queryset = Steps.objects.all().order_by('recipe')
+    queryset = Steps.objects.all().order_by('stepno')
     serializer_class = StepsSerializer
 
 
